@@ -1544,7 +1544,7 @@ if (isset($_POST['submit'])) {
 
                     <div id="menu" class="col-lg-9 col-md-8 col-12 collapse navbar-collapse nav-item">
                         <ul>
-                            <li><a href="#home">Beranda</a></li>
+                            <li><a href="index.php#home">Beranda</a></li>
                             <li class="has-dropdown">
                                 <a href="#profil">Profil</a>
                                 <ul class="dropdown-menu">
