@@ -1557,7 +1557,7 @@ if (isset($_POST['submit'])) {
                             <li><a href="#berita">Berita</a></li>
                             <li><a href="#services">Layanan</a></li>
                             <li><a href="#gallery">Galeri</a></li>
-                            <li><a href="#informasi_publik">Informasi Publik</a></li>
+                            <li><a href="informasi_publik.php">Informasi Publik</a></li>
                             <li><a href="hms/admin">Login</a></li>
                         </ul>
                     </div>
