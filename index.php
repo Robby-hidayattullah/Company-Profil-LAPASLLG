@@ -2155,99 +2155,6 @@ if(isset($_POST['submit']))
 </section>
 
 
-<!-- INFORMASI PUBLIK SECTION -->
-<section id="informasi_publik" class="informasi-publik-section" style="padding: 60px 0; background: #f8f9fa;">
-    <div class="container">
-        <div style="text-align: center; margin-bottom: 40px;">
-            <h2 style="font-size: 40px; font-weight: 700; color: #2c3e50; margin-bottom: 10px;">Informasi Publik</h2>
-            <p style="font-size: 16px; color: #7f8c8d; margin: 0;">Dokumen dan informasi dari kami</p>
-        </div>
-
-        <div class="row">
-            <?php
-            $sql = "SELECT * FROM tblinformasipublik WHERE Status = 'Aktif' ORDER BY TanggalUnggah DESC";
-            $result = mysqli_query($con, $sql);
-            
-            if(mysqli_num_rows($result) > 0) {
-                while($row = mysqli_fetch_array($result)) {
-                    $id = $row['id'];
-                    $judul = $row['JudulInformasi'];
-                    $deskripsi = $row['Deskripsi'];
-                    $kategori = $row['Kategori'];
-                    $namafile = $row['NamaFile'];
-                    $tanggal = date('d M Y', strtotime($row['TanggalUnggah']));
-            ?>
-            <div class="col-md-4 col-sm-6" style="margin-bottom: 30px;">
-                <div style="background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); height: 100%; display: flex; flex-direction: column;">
-                    
-                    <span style="background: #3498db; color: #fff; padding: 5px 10px; border-radius: 4px; font-size: 12px; font-weight: bold; margin-bottom: 15px; display: inline-block; width: fit-content;">
-                        <?php echo $kategori; ?>
-                    </span>
-
-                    <h4 style="margin: 0 0 10px 0; color: #2c3e50; font-size: 16px; font-weight: 700;">
-                        <?php echo strlen($judul) > 50 ? substr($judul, 0, 50) . '...' : $judul; ?>
-                    </h4>
-
-                    <p style="color: #7f8c8d; font-size: 13px; line-height: 1.6; margin: 0 0 15px 0; flex-grow: 1;">
-                        <?php echo strlen($deskripsi) > 80 ? substr($deskripsi, 0, 80) . '...' : $deskripsi; ?>
-                    </p>
-
-                    <div style="color: #95a5a6; font-size: 12px; margin-bottom: 15px; padding-top: 10px; border-top: 1px solid #ecf0f1;">
-                        <i class="fa fa-calendar"></i> <?php echo $tanggal; ?>
-                    </div>
-
-                    <div style="display: flex; gap: 10px;">
-                        <a href="index.php?file=<?php echo urlencode($namafile); ?>" class="btn btn-sm btn-success" style="flex: 1;">
-                            <i class="fa fa-download"></i> Download
-                        </a>
-                        <button class="btn btn-sm btn-info" data-toggle="modal" data-target="#modal<?php echo $id; ?>" style="flex: 1;">
-                            <i class="fa fa-eye"></i> Detail
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- MODAL -->
-            <div class="modal fade" id="modal<?php echo $id; ?>" tabindex="-1">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Detail Informasi</h5>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <h5 style="margin-bottom: 15px; font-weight: bold;"><?php echo $judul; ?></h5>
-                            <p><strong>Kategori:</strong> <span style="background: #3498db; color: #fff; padding: 3px 8px; border-radius: 3px; font-size: 11px;"><?php echo $kategori; ?></span></p>
-                            <p><strong>Tanggal:</strong> <?php echo $tanggal; ?></p>
-                            <p><strong>Deskripsi:</strong></p>
-                            <p style="color: #7f8c8d;"><?php echo $deskripsi; ?></p>
-                        </div>
-                        <div class="modal-footer">
-                            <a href="index.php?file=<?php echo urlencode($namafile); ?>" class="btn btn-primary">
-                                <i class="fa fa-download"></i> Download
-                            </a>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <?php
-                }
-            } else {
-            ?>
-            <div class="col-12">
-                <div style="text-align: center; padding: 50px; background: #fff; border-radius: 8px;">
-                    <h4 style="color: #7f8c8d;">Belum ada Informasi Publik</h4>
-                </div>
-            </div>
-            <?php } ?>
-        </div>
-    </div>
-</section>
-
-
-
 <!-- VISI MISI SECTION -->
 <section id="visi_misi" class="visi-misi-section">
     <div class="container visi-misi-container">
@@ -2751,5 +2658,6 @@ $(document).ready(function(){
     
 });
 </script>
+/robay/
 
 </html>
