@@ -2200,7 +2200,7 @@ if(isset($_POST['submit']))
 <section id="struktur">
     <div class="container">
         <div class="inner-title">
-            <h2>Struktur Organisasi</h2>
+            <h2>Struktur Organisasi 222</h2>
             <p>Bagan struktur organisasi Lembaga Pemasyarakatan Kelas IIA Lubuk Linggau</p>
         </div>
         
